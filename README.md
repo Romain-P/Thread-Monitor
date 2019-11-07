@@ -1,3 +1,3 @@
 ## Zplup
 
-![gif](https://i.imgur.com/seyG7CK.gifv)
+![gif](https://i.imgur.com/seyG7CK.gif)

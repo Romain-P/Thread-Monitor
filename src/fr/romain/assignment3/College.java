@@ -16,7 +16,7 @@ public class College {
 
     public College(List<ClassRoom> rooms, List<Lecturer> lecturers, List<Actor> actors, GUI monitor) {
         this.rooms = rooms.stream().collect(Collectors.toMap(ClassRoom::getId, room -> room));
-        this.lecturers = lecturers.stream().collect(Collectors.toMap(Lecturer::getLecturerId, lecturer -> lecturer));;
+        this.lecturers = lecturers.stream().collect(Collectors.toMap(Lecturer::getLecturerId, lecturer -> lecturer));
         this.actors = actors;
         this.monitor = monitor;
     }

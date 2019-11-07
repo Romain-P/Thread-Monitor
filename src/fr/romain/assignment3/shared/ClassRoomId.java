@@ -7,7 +7,7 @@ public enum ClassRoomId {
     W102(30);
 
     public int capacity;
-    private ClassRoomId(int capacity) {
+    ClassRoomId(int capacity) {
         this.capacity = capacity;
     }
 

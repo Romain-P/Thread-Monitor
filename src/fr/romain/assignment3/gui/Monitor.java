@@ -25,6 +25,9 @@ public class Monitor extends JPanel {
     private final Timer worker;
     private final int frameRate;
 
+	private static final Color visitorColorSit = new Color(150, 0, 0);
+	private static final Color visitorColorEnter = new Color(255, 150, 0);
+
     public Monitor(int frameRate) {
         this.frameRate = frameRate;
         this.tasks = new HashMap<>();
@@ -61,7 +64,7 @@ public class Monitor extends JPanel {
                     if (hasWaited)
                         monitor.delWaitingVisitor();
 
-                    monitor.room().setColor(place, Color.ORANGE);
+                    monitor.room().setColor(place, visitorColorEnter);
                     monitor.addVisitor();
                     break;
                 case LECTURER:
@@ -80,7 +83,6 @@ public class Monitor extends JPanel {
         final RoomMonitorPanel monitor = panel(id);
 
         postEvent(id, () -> {
-
             switch (actor.type()) {
                 case STUDENT:
                     monitor.room().setColor(place, Color.GREEN);
@@ -103,11 +105,10 @@ public class Monitor extends JPanel {
         final RoomMonitorPanel monitor = panel(id);
 
         postEvent(id, () -> {
-
             if (actor.type() == STUDENT)
                 monitor.room().setColor(place, Color.RED);
             else
-                monitor.room().setColor(place, Color.RED);
+                monitor.room().setColor(place, visitorColorSit);
             monitor.room().repaint();
         });
     }
